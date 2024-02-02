@@ -19,6 +19,15 @@ class Queue:
         self.head = None
         self.tail = None
 
+    def __str__(self):
+        """Магический метод для строкового представления объекта"""
+        string = ''
+        head = self.head
+        while head:
+            string += f'{head.data}\n'
+            head = head.next_node
+        return string.rstrip()
+
     def enqueue(self, data):
         """
         Метод для добавления элемента в очередь
@@ -43,7 +52,3 @@ class Queue:
             self.head = self.head.next_node
             return data
         return None
-
-    def __str__(self):
-        """Магический метод для строкового представления объекта"""
-        pass
