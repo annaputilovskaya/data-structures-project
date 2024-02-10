@@ -19,6 +19,20 @@ class Stack:
         """Конструктор класса Stack"""
         self.top = None
 
+    def __str__(self):
+        """
+        Отображение информации об объекте класса пользователю
+
+
+        :return: "<data3>\n<data2>\n<data1>"
+        """
+        string = ''
+        top = self.top
+        while top is not None:
+            string += f'{top.data}\n'
+            top = top.next_node
+        return string.rstrip()
+
     def push(self, data):
         """
         Метод для добавления элемента на вершину стека
