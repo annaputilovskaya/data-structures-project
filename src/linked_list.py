@@ -43,3 +43,19 @@ class LinkedList:
 
         ll_string += ' None'
         return ll_string.strip()
+
+    def to_list(self) -> list:
+        """Возвращает список с данными, содержащимися в односвязном списке LinkedList"""
+        ll_list = []
+        node = self.head
+        while node:
+            ll_list.append(node.data)
+            node = node.next_node
+        return ll_list
+
+    def get_data_by_id(self, data_id: int) -> dict:
+        """
+        Возвращает первый найденный в LinkedList словарь с ключом 'id',
+        значение которого равно переданному в метод значению
+        """
+        pass
