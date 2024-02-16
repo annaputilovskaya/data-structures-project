@@ -25,6 +25,7 @@ class TestLinkedList(unittest.TestCase):
 
     def test_str_linked_list(self):
         ll = LinkedList()
+        self.assertEqual(str(ll), 'None')
         ll.insert_beginning({'id': 1})
         ll.insert_at_end({'id': 2})
         ll.insert_at_end({'id': 3})
@@ -44,4 +45,11 @@ class TestLinkedList(unittest.TestCase):
             ])
 
     def test_get_data_by_id(self):
-        pass
+        ll = LinkedList()
+        ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+        ll.insert_at_end({'id': 2, 'username': 'mik.roz'})
+        ll.insert_at_end({'id': 3, 'username': 'mosh_s'})
+        ll.insert_beginning({'id': 0, 'username': 'serebro'})
+        self.assertEqual(ll.get_data_by_id(3),  {'id': 3, 'username': 'mosh_s'})
+        ll.insert_beginning('idusername')
+        self.assertEqual(ll.get_data_by_id(3),  {'id': 3, 'username': 'mosh_s'})
